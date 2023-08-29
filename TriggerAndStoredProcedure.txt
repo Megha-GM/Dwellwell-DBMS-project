@@ -1,0 +1,20 @@
+Trigger:
+
+DELIMITER $$
+CREATE TRIGGER check_password_match
+BEFORE INSERT OR UPDATE ON your_table_name
+FOR EACH ROW
+BEGIN
+    IF NEW.password != NEW.confirm_password THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Password and Confirm Password do not match';
+    END IF;
+END $$
+
+
+Stored procedure:
+
+DELIMITER //
+CREATE PROCEDURE insert_o (IN o_name varchar(20),IN o_pid varchar(20),IN o_email varchar(20),IN o_contact bigint)
+BEGIN
+insert into owner(name,pid,email,contact) values(o_name,o_pid,o_email,o_contact);
+END //

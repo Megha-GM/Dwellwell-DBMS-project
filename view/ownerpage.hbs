@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .banner {
+            width: 100%;
+            height: 240vh;
+            background: url(https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?b=1&s=170667a&w=0&k=20&c=Ko289acalSrEKwYI5sb20u2WQa7KS9L-_0Ug4u2iEmc=);
+            /* background-attachment: fixed; */
+            background-size:100%;
+            background-repeat:repeat;
+        }
+
+        #webname {
+            display: flex;
+            width: 60%;
+            font-family: cursive;
+            color: goldenrod;
+        }
+
+        .navbar {
+            width: 100%;
+            margin: auto;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            height: 13vh;
+        }
+
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            font-family: cursive;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: goldenrod;
+            font-family: cursive;
+            font-size: medium;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0%;
+            background-color: goldenrod;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        .navbar ul li button {
+            outline: none;
+            border: none;
+            background: transparent;
+            font-family: cursive;
+            font-size: medium;
+            color: goldenrod;
+            cursor: pointer;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 96vw;
+            margin: 0 4vh;
+            padding: 5vh;
+            padding-bottom: 10vh;
+        }
+
+        .questionlist {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-bottom: 5vh;
+        }
+
+        .question-box {
+            width: 75vw;
+            border: 0.1vw solid goldenrod;
+            border-radius: 10px;
+            height: auto;
+            padding: 2vw;
+            display: block;
+            margin: 3vh;
+        }
+
+        label {
+            padding: 5px;
+        }
+
+        .ques {
+            margin: 7px;
+        }
+
+        .questions {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .text {
+            margin: 5vh;
+        }
+
+        .submit a {
+            background-color: goldenrod;
+            color: black;
+            text-decoration: none;
+            padding: 2vh;
+            position: absolute;
+            left: 50%;
+            margin: 1vh;
+        }
+
+        .submit sub {
+            border: 2px solid white;
+        }
+
+        .propDetails {
+            background-color: rgba(218, 165, 32, 0.5);
+            width: 20vw;
+            height: 10vh;
+            border: none;
+            color: black;
+            padding: 1vw;
+            margin: 0.5vh;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ownerform {
+            height: 215vh;
+            width: 94vw;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            padding-left: 5vw;
+            padding-bottom: 5vw;
+        }
+
+        label {
+            padding: 2px;
+            padding-bottom: 1px;
+        }
+
+        input {
+            padding-top: 0;
+            padding-bottom: 3px;
+        }
+
+        .submit {
+            padding: 10px;
+            display: flex;
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="/home"><img
+                    src="https://img.freepik.com/premium-vector/real-estate-logo-house-logo-home-logo-sign-symbol_565585-829.jpg?w=360"
+                    class="logo"></a>
+            <h1 id="webname">DWELL WELL</h1>
+            <ul id="ul">
+                <li><a href="/home" class="li">HOME</a></li>
+                <li><a href="/about" class="li">ABOUT</a></li>
+                <li><a href="/signup" class="li">SIGNUP</a></li>
+                <li><a href="/home" class="li">LOGOUT</a></li>
+            </ul>
+        </div>
+        <div class="ownerform">
+            <div class="formdetails">
+                <form class="ownerform" action="/owneradd">
+                    <br>
+                    <p>Owner specifications:</p>
+                    <br>
+                    <label for="oname"><b>Ownername</b></label>
+                    <input type="text" placeholder="Enter Name" name="Name" id="oname" required>
+
+                    <label for="pid"><b>Property-id</b></label>
+                    <input type="text" placeholder="Enter property number" name="PID" id="pid" required>
+
+                    <label for="email"><b>Email Id</b></label>
+                    <input type="email" placeholder="Enter Email Id" name="Email" id="email" required>
+
+                    <label for="contact"><b>Phone no</b></label>
+                    <input type="phone" placeholder="Enter Phone Number" name="Contact" id="contact" required>
+                    <br>
+                    <br>
+                    <p>Other specifications:</p>
+                    <br>
+                    <label for="ppid"><b>Property-id</b></label>
+                    <input type="text" placeholder="property-id" name="PPID" id="ppid" required>
+
+                    <label for="locality"><b>Locality</b></label>
+                    <input type="text" placeholder="Enter Name" name="Locality" id="locality" required>
+
+                    <label for="builtarea"><b>Builtarea</b></label>
+                    <input type="text" placeholder="Enter Email Id" name="BuiltArea" id="builtarea" required>
+
+                    <label for="room"><b>Rooms</b></label>
+                    <input type="text" placeholder="Enter Room number" name="Rooms" id="room" required>
+
+                    <label for="rent"><b>Rent</b></label>
+                    <input type="text" placeholder="Enter Rent" name="Rent" id="Rent" required>
+
+                    <label for="facing"><b>Facing</b></label>
+                    <input type="text" placeholder="Enter Facing" name="Facing" id="facing" required>
+                    <br>
+                    <p>Property-Details specifications:</p>
+                    <br>
+                    <label for="ppid"><b>Property-id</b></label>
+                    <input type="text" placeholder="property-id" name="PPPID" id="ppid" required>
+
+                    <label for="property-age"><b>Property-Age</b></label>
+                    <input type="text" placeholder="Enter Property-Age" name="PropertyAge" id="property-age" required>
+
+                    <label for="availability"><b>Availability</b></label>
+                    <input type="text" placeholder="Availability" name="Availability" id="availability" required>
+
+                    <label for="bathroom"><b>BathRooms</b></label>
+                    <input type="text" placeholder="Enter the no.of.bathrooms" name="BathRooms" id="bathroom" required>
+
+                    <label for="parking"><b>ParkingAvailability</b></label>
+                    <input type="text" placeholder="Two Wheeler/Four Wheeler /No parking" name="Parking" id="parking" required>
+
+                    <label for="floornumber"><b>Floor-Number</b></label>
+                    <input type="text" placeholder="Enter Floor Number" name="FloorNumber" id="floornumber" required>
+
+                    <label for="balcony"><b>Balcony Availability</b></label>
+                    <input type="text" placeholder="Enter the no.of.balconies available" name="Balcony" id="balcony" required>
+
+                    <label for="propertytype"><b>Property-Type</b></label>
+                    <input type="text" placeholder="Rent/Lease/Sale" name="PropertyType" id="propertytype" required>
+                    <br>
+                    <p>Other specifications:</p>
+                    <br>
+                    <label for="pid"><b>Property-id</b></label>
+                    <input type="text" placeholder="Enter property number" name="PPPPID" id="pid" required>
+
+                    <label for="family"><b>Bachelors or Family:</b></label>
+                    <input type="text" placeholder="Bachelors/Family/No specifications" name="BachelorsOrFamily" id="family" required>
+
+                    <label for="veg"><b>Veg/Non-Veg</b></label>
+                    <input type="text" placeholder="Vegeterians only/No specifications" name="VegOrNonVeg" id="veg" required>
+                    
+                    <label for="charges"><b>Maintainence charges</b></label>
+                    <input type="text" placeholder="Enter maintainence fee" name="MaintainanceCharge" id="charges" required>
+                    <br>
+            </div>
+            <div class="submit"><button type="submit" class="submit">SUBMIT</div>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?b=1&s=170667a&w=0&k=20&c=Ko289acalSrEKwYI5sb20u2WQa7KS9L-_0Ug4u2iEmc=);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #webname {
+            display: flex;
+            width: 60%;
+            font-family: cursive;
+            color: goldenrod;
+        }
+
+        .navbar {
+            width: 100%;
+            margin: auto;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+        }
+
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            font-family: cursive;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: goldenrod;
+            font-family: cursive;
+            font-size: medium;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0%;
+            background-color: goldenrod;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        .navbar ul li button {
+            outline: none;
+            border: none;
+            background: transparent;
+            font-family: cursive;
+            font-size: medium;
+            color: goldenrod;
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        center img {
+            height: 80vh;
+            width: auto;
+            margin: auto;
+            margin-top: 3vh;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="/home"><img
+                    src="https://img.freepik.com/premium-vector/real-estate-logo-house-logo-home-logo-sign-symbol_565585-829.jpg?w=360"
+                    class="logo"></a>
+            <h1 id="webname">DWELL WELL</h1>
+            <ul id="ul">
+                <li><a href="/home" class="li">HOME</a></li>
+                <li><a href="/about" class="li">ABOUT</a></li>
+                <li><a href="/signup" class="li">SIGNUP</a></li>
+                <li><a href="/login" class="li">LOGIN</a></li>
+            </ul>
+        </div>
+        <center>
+            <img src="Capture.png" alt="About us">
+        </center>
+</body>
+
+</html>

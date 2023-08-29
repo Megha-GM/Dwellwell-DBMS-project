@@ -1,0 +1,178 @@
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/view/users.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        } 
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?b=1&s=170667a&w=0&k=20&c=Ko289acalSrEKwYI5sb20u2WQa7KS9L-_0Ug4u2iEmc=);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #webname {
+            display: flex;
+            width: 60%;
+            font-family: cursive;
+            color: goldenrod;
+        }
+
+        .navbar {
+            width: 100%;
+            margin: auto;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            height: 13vh;
+        }
+
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            font-family: cursive;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: goldenrod;
+            font-family: cursive;
+            font-size: medium;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0%;
+            background-color: goldenrod;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        .navbar ul li button {
+            outline: none;
+            border: none;
+            background: transparent;
+            font-family: cursive;
+            font-size: medium;
+            color: goldenrod;
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+
+        .well {
+            background-color: black;
+            color: goldenrod;
+            width: 50%;
+            margin: 25px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        table {
+            background-color: black;
+            color: white;
+            width: 98vw;
+            margin: 1vw;
+        }
+
+        thead {
+            background-color: black;
+            color: goldenrod;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class='banner'>
+        <div class="navbar">
+            <a href="/home"><img
+                    src="https://img.freepik.com/premium-vector/real-estate-logo-house-logo-home-logo-sign-symbol_565585-829.jpg?w=360"
+                    class="logo"></a>
+            <h1 id="webname">DWELL WELL</h1>
+            <ul id="ul">
+                <li><a href="/home" class="li">HOME</a></li>
+                <li><a href="/about" class="li">ABOUT</a></li>
+                <li><a href="/signup" class="li">SIGNUP</a></li>
+                <li><a href="/home" class="li">LOGOUT</a></li>
+            </ul>
+        </div>
+        <br>
+        <div class="container">
+            <center>
+                <div class='well'>
+                    <h2>PROPERTY DETAILS</h2>
+                </div>
+            </center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Locality</th>
+                        <th>BuiltArea</th>
+                        <th>Rooms</th>
+                        <th>Rent</th>
+                        <th>Facing</th>
+                    </tr>
+                </thead>
+                {{#each items}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.contact}}</td>
+                    <td>{{this.Locality}}</td>
+                    <td>{{this.BuiltArea}}</td>
+                    <td>{{this.Rooms}}</td>
+                    <td>{{this.Rent}}</td>
+                    <td>{{this.Facing}}</td>
+                </tr>
+                {{/each}}
+            </table>
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>

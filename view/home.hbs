@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWELLWELL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .maindiv {
+            width: 45%;
+            height: 400px;
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            display: none;
+        }
+
+        .maindiv1 {
+            width: 50%;
+            height: 450px;
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%, -50%);
+            background-size: 100% 100%;
+            display: none;
+        }
+
+        .banner {
+            width: 100%;
+            height: 101vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?b=1&s=170667a&w=0&k=20&c=Ko289acalSrEKwYI5sb20u2WQa7KS9L-_0Ug4u2iEmc=);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #webname {
+            display: flex;
+            width: 60%;
+            font-family: cursive;
+            color: goldenrod;
+        }
+
+        .navbar {
+            width: 100%;
+            margin: auto;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+        }
+
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            font-family: cursive;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: goldenrod;
+            font-family: cursive;
+            font-size: medium;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0%;
+            background-color: goldenrod;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        main {
+            width: 100%;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar ul li button {
+            outline: none;
+            border: none;
+            background: transparent;
+            font-family: cursive;
+            font-size: medium;
+            color: goldenrod;
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            height: max-content;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousal {
+            height: 80vh;
+            width: auto;
+            overflow: hidden;
+            border: 5px solid black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 90vw;
+            margin: 0 4vh;
+            padding: 5vh;
+            padding-bottom: 10vh;
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+            top: 45px;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 900px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            position: relative;
+            top: -5px;
+            background-color: black;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 2s ease;
+        }
+
+        .active {
+            background-color: goldenrod;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 3s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="maindiv1"></div>
+        <div class="maindiv"></div>
+        <div class="banner">
+            <div class="navbar">
+                <a href="/home"><img
+                        src="https://img.freepik.com/premium-vector/real-estate-logo-house-logo-home-logo-sign-symbol_565585-829.jpg?w=360"
+                        class="logo"></a>
+                <h1 id="webname">DWELL WELL</h1>
+                <ul id="ul">
+                    <li><a href="/home" class="li">HOME</a></li>
+                    <li><a href="/about" class="li">ABOUT</a></li>
+                    <li><a href="/signup" class="li">SIGNUP</a></li>
+                    <li><a href="/login" class="li">LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="slideshow-container">
+                <center style="position:relative; top:-4vh;">
+                    <div class="mySlides fade">
+                        <img src="1.jpeg" alt="Image1" class="carousal">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="2.jpeg" alt="Image2" class="carousal">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="3.jpeg" alt="Image3" class="carousal">
+                    </div>
+                </center>
+            </div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <script>
+                var slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1 }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                    setTimeout(showSlides, 3000); // Change image every 2 seconds
+                }
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>

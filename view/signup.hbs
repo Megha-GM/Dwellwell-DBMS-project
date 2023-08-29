@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+    }
+
+    .banner {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?b=1&s=170667a&w=0&k=20&c=Ko289acalSrEKwYI5sb20u2WQa7KS9L-_0Ug4u2iEmc=);
+        background-size: cover;
+        background-position: center;
+    }
+
+    #webname {
+        display: flex;
+        width: 60%;
+        font-family: cursive;
+        color: goldenrod;
+    }
+
+    .navbar {
+        width: 100%;
+        margin: auto;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: black;
+    }
+
+    .logo {
+        width: 100px;
+        cursor: pointer;
+    }
+
+    .navbar ul li {
+        list-style: none;
+        font-family: cursive;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: goldenrod;
+        font-family: cursive;
+        font-size: medium;
+    }
+
+    .navbar ul li::after {
+        content: '';
+        height: 3px;
+        width: 0%;
+        background-color: goldenrod;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+
+    .navbar ul li:hover::after {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar ul li button {
+        outline: none;
+        border: none;
+        background: transparent;
+        font-family: cursive;
+        font-size: medium;
+        color: goldenrod;
+        cursor: pointer;
+    }
+
+    .input-register {
+        top: 200px;
+        position: absolute;
+        width: 280px;
+        transition: .5s;
+    }
+
+    .signup-box {
+        width: 400px;
+        height: 500px;
+        position: relative;
+        margin: 2% auto;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        overflow: hidden;
+        right: -30px;
+    }
+
+    .input-register {
+        top: 200px;
+        position: absolute;
+        width: 280px;
+        transition: .5s;
+    }
+
+    .button {
+        padding: 20px 80px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        color: white;
+        position: relative;
+        left: 85px;
+        bottom: 5px;
+    }
+
+    #btn {
+        top: 0;
+        left: 100px;
+        position: absolute;
+        width: 200px;
+        height: 13%;
+        background: goldenrod;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: .5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        border-bottom: 1px solid white;
+        outline: none;
+        background: transparent;
+    }
+
+    .submit-btn {
+        width: 85%;
+        padding: 10px 30px;
+        text-decoration: none;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        background: goldenrod;
+        color: white;
+        border: none;
+        border-radius: 30px;
+    }
+
+    .check-box {
+        margin: 30px 10px 34px 0;
+    }
+
+    span {
+        color: white;
+        font-size: 15px;
+        bottom: 68px;
+        position: absolute;
+    }
+
+    #register {
+        left: 532px;
+    }
+
+    #register input {
+        color: white;
+        font-size: medium;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <a href="/home"><img
+                    src="https://img.freepik.com/premium-vector/real-estate-logo-house-logo-home-logo-sign-symbol_565585-829.jpg?w=360"
+                    class="logo"></a>
+            <h1 id="webname">DWELL WELL</h1>
+            <ul id="ul">
+                <li><a href="/home" class="li">HOME</a></li>
+                <li><a href="/about" class="li">ABOUT</a></li>
+                <li><a href="/signup" class="li">SIGNUP</a></li>
+                <li><a href="/login" class="li">LOGIN</a></li>
+            </ul>
+        </div>
+        <div id="signup-form" class="signup-page">
+            <div class="signup-box">
+                <div class="button-box"></div>
+                <div id="btn"></div>
+                <button type="button" onclick="register()" class="button">SIGNUP</button>
+            </div>
+            <form id="register" class="input-register" action="/signupinfo">
+                <input type="text" class="input-field" placeholder="Name" required name="Name">
+                <input type="email" class="input-field" placeholder="Email-Id" required name="EmailID">
+                <input type="text" class="input-field" placeholder="Contact No" required name="ContactNumber">
+                <input type="password" class="input-field" placeholder="Enter Password" required name="Password">
+                <input type="password" class="input-field" placeholder="Confirm Password" required
+                    name="ConfirmPassword">
+                <input type="checkbox" class="check-box" required><span>I agree to the terms and conditions</span>
+                <button type="submit" class="submit-btn">SIGNUP</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
